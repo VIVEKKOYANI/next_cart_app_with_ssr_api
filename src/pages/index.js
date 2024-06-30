@@ -1,20 +1,20 @@
 import React, { useEffect, useState } from "react";
-import Navbar from "@/components/Navbar";
 import { useDispatch, useSelector } from "react-redux";
+import Head from "next/head";
 import {
   selectAllProducts,
   fetchAllProductsAsync,
   setFilteredProducts,
   fetchProductsByFilterAsync,
 } from "@/redux/slices/productSlice";
-import MobileFilter from "@/components/product/mobileFilter";
-import Pagination from "@/components/Pagination";
-import ProductList from "@/components/product/ProductList";
-import DesktopFilter from "@/components/product/DesktopFilter";
-import SortFilter from "@/components/product/SortFilter";
-import useDebounce from "@/hook/useDebounce";
-import { wrapper } from "@/redux/store.js";
-import Head from "next/head";
+import Navbar from "@/components/Navbar";
+import MobileFilter from "../components/product/MobileFilter";
+import Pagination from "../components/Pagination";
+import ProductList from "../components/product/ProductList";
+import DesktopFilter from "../components/product/DesktopFilter";
+import SortFilter from "../components/product/SortFilter";
+import useDebounce from "../hook/useDebounce";
+import { wrapper } from "../redux/store.js";
 
 function Home({ initialProducts }) {
   const dispatch = useDispatch();
