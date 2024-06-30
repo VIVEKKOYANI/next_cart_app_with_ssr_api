@@ -1,7 +1,9 @@
+const API_URL = process.env.NEXT_PUBLIC_API_URL;
+
 export function fetchAllProducts() {
   return new Promise(async (resolve, reject) => {
     try {
-      const response = await fetch("http://localhost:8080/products");
+      const response = await fetch(`${API_URL}/products`);
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
@@ -31,7 +33,7 @@ export function fetchProductsByFilter(filter) {
   return new Promise(async (resolve) => {
     try {
       const response = await fetch(
-        "http://localhost:8080/products?" + queryString
+        `${API_URL}/products?` + queryString
       );
       const data = await response.json();
       resolve(data);
@@ -45,7 +47,7 @@ export function fetchProductsByFilter(filter) {
 export function fetchProductById(id) {
   return new Promise(async (resolve, reject) => {
     try {
-      const response = await fetch(`http://localhost:8080/products/${id}`);
+      const response = await fetch(`${API_URL}/products/${id}`);
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
