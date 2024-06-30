@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import Head from "next/head";
 import Image from "next/image";
 
-function cart() {
+function Cart() {
   const router = useRouter();
   const dispatch = useDispatch();
   const cartDetails = useSelector(selectCart);
@@ -126,4 +126,4 @@ function cart() {
   );
 }
 
-export default React.memo(cart);
+export default React.memo(Cart);

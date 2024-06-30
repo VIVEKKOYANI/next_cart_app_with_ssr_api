@@ -16,6 +16,7 @@ import {
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useSelector } from "react-redux";
+import Image from "next/image";
 
 const user = {
   name: "Tom Cook",
@@ -42,10 +43,14 @@ function Navbar({ headerTitle, children }) {
                 <div className="flex items-center">
                   <div className="flex-shrink-0">
                     <Link href="/">
-                      <img
+                      <Image
                         className="h-8 w-8"
                         src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
                         alt="Your Company"
+                        width={250}
+                        height={250}
+                        loading="lazy"
+                        unoptimized={true}
                       />
                     </Link>
                   </div>
@@ -95,10 +100,14 @@ function Navbar({ headerTitle, children }) {
                         <MenuButton className="relative flex max-w-xs items-center rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                           <span className="absolute -inset-1.5" />
                           <span className="sr-only">Open user menu</span>
-                          <img
+                          <Image
                             className="h-8 w-8 rounded-full"
                             src={user.imageUrl}
-                            alt=""
+                            alt="User"
+                            width={250}
+                            height={250}
+                            loading="lazy"
+                            unoptimized={true}
                           />
                         </MenuButton>
                       </div>
@@ -142,10 +151,14 @@ function Navbar({ headerTitle, children }) {
               <div className="border-t border-gray-700 pb-3 pt-4">
                 <div className="flex items-center px-5">
                   <div className="flex-shrink-0">
-                    <img
+                    <Image
                       className="h-10 w-10 rounded-full"
                       src={user.imageUrl}
-                      alt=""
+                      alt="User"
+                      width={250}
+                      height={250}
+                      loading="lazy"
+                      unoptimized={true}
                     />
                   </div>
                   <div className="ml-3">

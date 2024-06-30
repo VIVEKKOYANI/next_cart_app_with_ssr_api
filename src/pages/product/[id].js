@@ -11,7 +11,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-function details() {
+function Details() {
   const dispatch = useDispatch();
   const productDetails = useSelector(selectProductById);
   const cartDetails = useSelector(selectCart);
@@ -148,4 +148,4 @@ function details() {
   );
 }
 
-export default React.memo(details);
+export default React.memo(Details);

@@ -1,8 +1,8 @@
+import React from "react";
 import { fetchProductByIdAsync } from "@/redux/slices/productSlice";
 import { StarIcon } from "@heroicons/react/20/solid";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
 
 const ProductList = React.memo(({ products, page, per_page, dispatch }) => {
   return (
@@ -67,5 +67,8 @@ const ProductList = React.memo(({ products, page, per_page, dispatch }) => {
     </div>
   );
 });
+
+// Setting the displayName property
+ProductList.displayName = "ProductList";
 
 export default ProductList;
